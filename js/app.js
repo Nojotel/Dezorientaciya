@@ -61,20 +61,15 @@ buttonSendForm.addEventListener("click", function (e) {
 });
 
 experts.forEach((expert, index) => {
-  // Create a div element with a specific class
   const divElement = document.createElement("div");
   divElement.classList.add("expert-container");
 
-  // Create an img element
   const imgElement = document.createElement("img");
   imgElement.classList.add("expert-container__img");
 
-  // Set the src attribute of the img element
   imgElement.src = expert.url;
 
-  // Append the img element to the div element
   divElement.appendChild(imgElement);
 
-  // Append the div element to the container
   containeExperts.appendChild(divElement);
 });
