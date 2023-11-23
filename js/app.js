@@ -8,28 +8,28 @@ const containeExperts = document.querySelector(".section__four-container__expert
 
 let experts = [
   {
-    url: "./img/Experts1.png",
+    url: "../img/Experts1.png",
   },
   {
-    url: "./img/Experts2.png",
+    url: "../img/Experts2.png",
   },
   {
-    url: "./img/Experts3.png",
+    url: "../img/Experts3.png",
   },
   {
-    url: "./img/Experts4.png",
+    url: "../img/Experts4.png",
   },
   {
-    url: "./img/Experts5.png",
+    url: "../img/Experts5.png",
   },
   {
-    url: "./img/Experts6.png",
+    url: "../img/Experts6.png",
   },
   {
-    url: "./img/Experts7.png",
+    url: "../img/Experts7.png",
   },
   {
-    url: "./img/Experts8.png",
+    url: "../img/Experts8.png",
   },
 ];
 
