@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Дезориентация</title>
+  </head>
+  <body class="body">
+    <header class="header">
+      <nav class="nav-container">
+        <div class="nav-container__logo"></div>
+      </nav>
+    </header>
+    <div class="body-container">
+      <section class="section__one">
+        <div class="body-container__offer">
+          <h1 class="offer-title">Сделайте первый шаг<br />для успешной карьеры</h1>
+          <div class="offer-subtitle">Мы предоставим вам все инструменты и<br />стратегии для роста вашей карьеры</div>
+          <button class="offer-button">Заявка на карьерную консультацию</button>
+          <div class="offer-partner__text">Наши партнеры</div>
+          <div class="offer-partner__img"></div>
+        </div>
+        <div class="body-container__offer-img">
+          <div class="offer-img__girl"></div>
+          <button class="offer-img__button-gift">Получить подарки</button>
+          <button class="offer-img__button-bot"></button>
+          <div class="offer-img__container-statistics">
+            <div class="container-statistics__text">30k+<br />Успешно трудоустроены</div>
+            <div class="container-statistics__text">20k+<br />Получили карьерный рост</div>
+          </div>
+        </div>
+      </section>
+      <section class="section__two"></section>
+    </div>
+    <div class="container-section__three">
+      <section class="section__three">
+        <h3 class="section__three-title">Запишитесь на карьерное консультирование прямо сейчас!</h3>
+        <div class="section__three-subtitle">Жаждете успеха? Оставьте заявку на консультацию, чтобы начать ваш путь к карьерному росту и достижению ваших целей.</div>
+        <form class="section__three-form" action="/submit" method="post">
+          <input type="text" id="name" name="name" placeholder="Имя и Фамилия" required />
+
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Телефон" required />
+
+          <input type="email" id="email" name="email" placeholder="Электронный адрес" required />
+
+          <button class="section__three-button">Отправить заявку</button>
+        </form>
+      </section>
+    </div>
+    <div class="body-container">
+      <section class="section__four">
+        <h3 class="section__four-title">Давайте вместе создадим вашу успешную карьеру</h3>
+        <div class="section__four-subtitle">Наша команда экспертов поможет вам с выбором карьерного пути, оценкой текущих навыков и поиском вакансий</div>
+        <div class="section__four-container__experts"></div>
+        <div class="section__four-container__advantages">
+          <div class="advantages__experience">
+            <div class="experience__check"></div>
+            <div class="experience__title">Образование</div>
+            <div class="experience__subtitle">У всех экспертов высшее образование, они постоянно участвуют в HR- мероприятиях и повышают квалификацию</div>
+          </div>
+          <div class="advantages__experience">
+            <div class="experience__check"></div>
+            <div class="experience__title">Опыт работы</div>
+            <div class="experience__subtitle">Имеют значительный опыт в области карьерного развития, разработают детальный план карьерного роста</div>
+          </div>
+          <div class="advantages__experience">
+            <div class="experience__check"></div>
+            <div class="experience__title">Ресурсы</div>
+            <div class="experience__subtitle">У нас есть доступ к закрытым базам вакансий, знакомы с требованиям к различным профессиям и отраслям</div>
+          </div>
+        </div>
+        <button class="offer-button">Заявка на карьерную консультацию</button>
+      </section>
+    </div>
+    <div class="container-section__five">
+      <section class="section__five">
+        <h3 class="section__five-title">Получите подарки от наших экспертов</h3>
+        <div class="section__five-subtitle">Пообщайтесь с нашим ботом, ответьте на несколько вопросов и получите гайд “ Как получить работу мечты”</div>
+        <div class="section__five-img"></div>
+        <button class="section__five-button">Получить подарок</button>
+      </section>
+    </div>
+    <div class="body-container">
+      <section class="section__six"></section>
+    </div>
+    <footer class="fotter">
+      <div class="fotter-container">
+        <div class="fotter-container__contact">Контакты</div>
+        <div class="fotter-container__mail"><a href="mailto:support@dezorientaciya.ru">support@dezorientaciya.ru</a></div>
+        <div class="fotter-container__social">
+          <button class="social__telegramm"></button>
+          <button class="social__watsapp"></button>
+          <button class="social__viber"></button>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="./js/app.js"></script>
+</html>
