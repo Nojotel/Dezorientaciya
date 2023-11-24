@@ -18,15 +18,15 @@ button {
 }
 /*Header*/
 .header {
-  height: 152px;
+  height: 47vh;
 }
 .nav-container {
   width: 1280px;
-  height: 152px;
+  height: 47vh;
   margin: 0 auto;
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: end;
 }
 .nav-container__logo {
   padding-top: 50px;
@@ -46,12 +46,26 @@ button {
   margin: 0 auto;
 }
 .section__one {
-  height: 848px;
+  height: 53vh;
   width: 1280px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.container-statistics {
+  display: none;
+}
+.container__partner {
+}
+.offer-partner__text {
+}
+.offer-partner__img {
+}
+.offer-img__container-statistics {
+}
+.container-statistics__text {
+}
+
 .body-container__offer {
   width: 50%;
   height: 100%;
