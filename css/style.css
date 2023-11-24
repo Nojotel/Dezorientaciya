@@ -18,15 +18,15 @@ button {
 }
 /*Header*/
 .header {
-  height: 47vh;
+  height: 152px;
 }
 .nav-container {
   width: 1280px;
-  height: 47vh;
+  height: 152px;
   margin: 0 auto;
   display: flex;
   justify-content: start;
-  align-items: end;
+  align-items: center;
 }
 .nav-container__logo {
   padding-top: 50px;
@@ -46,26 +46,12 @@ button {
   margin: 0 auto;
 }
 .section__one {
-  height: 53vh;
+  height: 848px;
   width: 1280px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.container-statistics {
-  display: none;
-}
-.container__partner {
-}
-.offer-partner__text {
-}
-.offer-partner__img {
-}
-.offer-img__container-statistics {
-}
-.container-statistics__text {
-}
-
 .body-container__offer {
   width: 50%;
   height: 100%;
