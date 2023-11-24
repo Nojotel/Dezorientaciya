@@ -191,8 +191,37 @@ button {
 .section__two {
   width: 1280px;
   height: 700px;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
+.section__two-title {
+  color: var(--text-black);
+  font-family: Racama;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: -50px;
+}
+.section__two-subtitle {
+  color: var(--text-black);
+  font-family: Racama;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.section__two-img {
+  width: 1005px;
+  height: 300px;
+  background-image: url(../img/road_map.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .container-section__three {
   width: 100%;
   height: 505px;
@@ -403,9 +432,82 @@ button {
   box-shadow: 5px 5px 4px 0px #c291f4;
 }
 .section__six {
-  background-color: green;
   width: 1280px;
   height: 610px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.section__six-title {
+  color: var(--text-black);
+  font-family: Racama;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: -50px;
+}
+.section__six-subtitle {
+  color: var(--text-black);
+  text-align: center;
+  font-family: Racama;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.section__six-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider__left {
+  width: 60px;
+  height: 60px;
+  background-image: url(../img/arrows-left.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+.slider__reviews1 {
+  width: 300px;
+  height: 257px;
+  background-image: url(../img/reviews1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 20px;
+}
+.slider__reviews2 {
+  width: 300px;
+  height: 257px;
+  background-image: url(../img/reviews2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 20px;
+}
+.slider__reviews3 {
+  width: 300px;
+  height: 257px;
+  background-image: url(../img/reviews3.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 20px;
+}
+.slider__right {
+  width: 60px;
+  height: 60px;
+  background-image: url(../img/arrows-right.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  margin: 0 20px;
 }
 
 /*footer*/
