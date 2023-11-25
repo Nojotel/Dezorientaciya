@@ -62,7 +62,7 @@
         <form class="section__three-form" action="/submit" method="post">
           <input type="text" id="name" name="name" placeholder="Имя и Фамилия" required />
 
-          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Телефон" required />
+          <input type="tel" id="phone" name="phone" placeholder="Телефон" required />
 
           <input type="email" id="email" name="email" placeholder="Электронный адрес" required />
 
@@ -178,15 +178,33 @@
         <div class="bot--header__text">Чат-бот</div>
         <button class="bot--header__exit"></button>
       </div>
-      <div class="bot__container--body"></div>
+      <div class="bot__container--body">
+        <div class="bot--body__ansercontainer">
+          <img class="bot--header__img" src="./img/ufo.png" alt="Иконка чат бота" />
+          <div class="bot--body__text">
+            Добрый день ! 🌞<br /><br />
+            Я чат-бот компании Дезориентации. <br /><br />
+            Оказываю карьерную поддержку, запишу на консультацию и дарю подарки 🎁!
+          </div>
+        </div>
+
+        <button class="bot--body__button" onclick="toggleButtons(this)">Меня интересует профориентация 🤔</button>
+        <button class="bot--body__button" onclick="toggleButtons(this)">Заявка на консультацию ✍️</button>
+        <button class="bot--body__button" onclick="toggleButtons(this)">Мне нужна карьерная поддержка 🤝</button>
+        <button class="bot--body__button" onclick="toggleButtons(this)">Хочу подарок 🎁</button>
+        <div class="bot__container--user none">
+          <img class="bot--header__img" src="./img/ufo.png" alt="Иконка чат бота" />
+          <div class="bot--body__ansercontainer--user"></div>
+        </div>
+      </div>
       <div class="bot__container--footer">
         <button class="bot--footer__smile"></button>
-        <input class="bot--footer__text" placeholder="Введите сообщение..." name="" id="" cols="30" rows="3"></ш>
+        <textarea class="bot--footer__text" id="footerText" placeholder="Введите сообщение..." rows="6"></textarea>
         <button class="bot--footer__sendform"></button>
       </div>
     </div>
+    <script src="./js/app.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/bot.js"></script>
   </body>
-  <script src="./js/app.js"></script>
-  <script src="./js/slider.js"></script>
-  <script src="./js/bot.js"></script>
 </html>

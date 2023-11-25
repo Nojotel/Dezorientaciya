@@ -737,8 +737,13 @@ button {
 }
 
 .bot__container--body {
+  justify-content: flex-end;
+  align-items: flex-end;
   width: 100%;
   height: 590px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
 }
 .bot__container--footer {
   width: 100%;
@@ -749,6 +754,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .bot--footer__smile {
   width: 23px;
@@ -761,7 +767,7 @@ button {
   margin-right: 10px;
 }
 .bot--footer__text {
-  color: var(--reply-text-placeholder);
+  font-family: Arial, Helvetica, sans-serif;
   font-feature-settings: "clig" off, "liga" off;
   font-family: Racama;
   font-size: 15px;
@@ -770,13 +776,15 @@ button {
   line-height: 135%;
   border: 0;
   background: #e2e5da;
-  color: #000;
+  color: #222d38;
   width: 75%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   outline: none;
+  resize: none;
+  padding-top: 30px;
 }
 .bot--footer__sendform {
   width: 23px;
@@ -787,4 +795,147 @@ button {
   background-size: contain;
   border-radius: 50%;
   margin-left: 10px;
+}
+.bot--body__ansercontainer {
+  display: flex;
+  align-items: end;
+}
+
+.bot--body__text {
+  color: #323232;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 30px 30px 30px 0px;
+  background: rgba(212, 242, 29, 0.7);
+  padding: 20px;
+}
+.bot--body__button {
+  border-radius: 30px 30px 30px 0px;
+  background: rgba(212, 242, 29, 0.7);
+  margin: 5px;
+  text-align: center;
+  height: 50px;
+  padding: 0 20px;
+  transition: background 0.3s ease;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.bot--body__button:hover {
+  background: #c68dff;
+}
+.ansercontainer--user__1 {
+  width: auto;
+  height: auto;
+}
+
+.ansercontainer--user__text {
+  color: var(--text-black);
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 200px;
+  margin-left: -85px;
+}
+.bot__container--user {
+  display: flex;
+  align-items: end;
+  margin-bottom: 10px;
+}
+.bot--body__ansercontainer--user {
+  height: auto;
+  width: 330px;
+  background: rgba(212, 242, 29, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  padding: 30px;
+}
+.ansercontainer--user__1--form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 250px;
+  height: 200px;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.ansercontainer--user__1--form__button {
+  color: var(--text-black);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 202px;
+  height: 170px;
+  border-radius: 40px;
+  border: 3px solid #cff000;
+  background: #fff;
+  margin-top: 8px;
+}
+#namebot {
+  width: 202px;
+  height: 170px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey, #8f8e8e);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+#phonebot {
+  width: 202px;
+  height: 170px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey, #8f8e8e);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+#emailbot {
+  width: 202px;
+  height: 170px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey, #8f8e8e);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+.none {
+  display: none;
 }
