@@ -18,15 +18,15 @@ buttonSendForm.addEventListener("click", async function (e) {
   e.preventDefault();
 
   if (!formName.value) {
-    setPlaceholderError(formName, "Пожалуйста, введите имя");
+    setPlaceholderError(formName);
   }
 
   if (!formTel.value) {
-    setPlaceholderError(formTel, "Пожалуйста, введите телефон");
+    setPlaceholderError(formTel);
   }
 
   if (!formMail.value) {
-    setPlaceholderError(formMail, "Пожалуйста, введите почту");
+    setPlaceholderError(formMail);
   }
 
   if (!formName.value || !formTel.value || !formMail.value) {
@@ -59,14 +59,9 @@ buttonSendForm.addEventListener("click", async function (e) {
   }
 });
 
-function setPlaceholderError(inputElement, errorMessage) {
-  const originalPlaceholder = inputElement.getAttribute("placeholder");
-  inputElement.setAttribute("placeholder", errorMessage);
-  inputElement.classList.add("error");
+function setPlaceholderError(inputElement) {
   inputElement.classList.add("input-error");
   setTimeout(() => {
-    inputElement.setAttribute("placeholder", originalPlaceholder);
-    inputElement.classList.remove("error");
     inputElement.classList.remove("input-error");
   }, 3000);
 }
