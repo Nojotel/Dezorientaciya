@@ -67,8 +67,8 @@ function createElementWithClassAndHTML(elementType, className, html) {
 function createForm() {
   const form = document.createElement("form");
   form.classList.add("ansercontainer--user__1--form");
-  form.action = "http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/"; // Указываем URL для отправки данных
-  form.method = "POST"; // Указываем метод отправки данных
+  form.action = "http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/";
+  form.method = "POST";
 
   const inputs = [
     { type: "text", id: "namebot", name: "name", placeholder: "Имя и Фамилия", required: true },
@@ -106,15 +106,12 @@ function createForm() {
       const responseText = await response.text();
       console.log("Response content:", responseText);
 
-      // Очистка полей формы после отправки
       form.querySelector("#namebot").value = "";
       form.querySelector("#phonebot").value = "";
       form.querySelector("#emailbot").value = "";
 
-      // Очистка содержимого контейнера с ответом пользователя
       userAnswerContainer.innerHTML = "";
 
-      // Добавление нового текста в контейнер с HTML-разметкой
       const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Ваша заявка получена! Спасибо за доверие!<br><br>В ближайшее время наши эксперты вам позвонят!");
       userAnswerContainer.appendChild(successMessage);
     } catch (error) {

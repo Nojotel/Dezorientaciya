@@ -17,6 +17,22 @@ buttonКequestСonsultation.forEach((button) => {
 buttonSendForm.addEventListener("click", async function (e) {
   e.preventDefault();
 
+  if (!formName.value) {
+    setPlaceholderError(formName, "Пожалуйста, введите имя");
+  }
+
+  if (!formTel.value) {
+    setPlaceholderError(formTel, "Пожалуйста, введите телефон");
+  }
+
+  if (!formMail.value) {
+    setPlaceholderError(formMail, "Пожалуйста, введите почту");
+  }
+
+  if (!formName.value || !formTel.value || !formMail.value) {
+    return;
+  }
+
   const formData = {
     name: formName.value,
     phone: formTel.value,
@@ -35,7 +51,6 @@ buttonSendForm.addEventListener("click", async function (e) {
     const responseText = await response.text();
     console.log("Response content:", responseText);
 
-    // Clear form fields
     formName.value = "";
     formTel.value = "";
     formMail.value = "";
@@ -44,14 +59,14 @@ buttonSendForm.addEventListener("click", async function (e) {
   }
 });
 
-experts.forEach((expert, index) => {
-  const divElement = document.createElement("div");
-  divElement.classList.add("expert-container");
-
-  const imgElement = document.createElement("img");
-  imgElement.classList.add("expert-container__img");
-  imgElement.src = expert.url;
-
-  divElement.appendChild(imgElement);
-  containeExperts.appendChild(divElement);
-});
+function setPlaceholderError(inputElement, errorMessage) {
+  const originalPlaceholder = inputElement.getAttribute("placeholder");
+  inputElement.setAttribute("placeholder", errorMessage);
+  inputElement.classList.add("error");
+  inputElement.classList.add("input-error");
+  setTimeout(() => {
+    inputElement.setAttribute("placeholder", originalPlaceholder);
+    inputElement.classList.remove("error");
+    inputElement.classList.remove("input-error");
+  }, 3000);
+}
