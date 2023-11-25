@@ -42,21 +42,25 @@ buttonКequestСonsultation.forEach((button) => {
 buttonSendForm.addEventListener("click", function (e) {
   e.preventDefault();
 
-  const formData = new FormData();
-  formData.append("name", formName.value);
-  formData.append("phone", formTel.value);
-  formData.append("email", formMail.value);
+  const formData = {
+    name: formName.value,
+    phone: formTel.value,
+    email: formMail.value,
+  };
 
-  fetch("", {
+  fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
     method: "POST",
-    body: formData,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
   })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Form submitted successfully:", data);
-    })
     .catch((error) => {
       console.error("Error submitting form:", error);
+      return error.text();
+    })
+    .then((responseText) => {
+      console.log("Response content:", responseText);
     });
 });
 

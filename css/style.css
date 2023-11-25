@@ -220,13 +220,83 @@ button {
   font-weight: 400;
   line-height: normal;
 }
-.section__two-img {
+.section__two-map {
   width: 1005px;
   height: 300px;
-  background-image: url(../img/road_map.png);
+  background-image: url(../img/road.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+.section__two-map {
+  display: flex;
+}
+.map__container-pin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.map__container-pin:nth-child(1) {
+  margin: 40px 20px;
+}
+.map__container-pin:nth-child(2) {
+  margin: 40px 17px;
+}
+.map__container-pin:nth-child(3) {
+  margin: 40px 17px;
+}
+.map__container-pin:nth-child(4) {
+  margin: 40px 14px;
+}
+.map__container-pin:nth-child(1) .container-pin__img {
+  width: 180px;
+  height: 180px;
+  background-image: url(../img/geo_plan.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 15px;
+}
+
+.map__container-pin:nth-child(2) .container-pin__img {
+  width: 180px;
+  height: 180px;
+  background-image: url(../img/geo_expert.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 15px;
+}
+
+.map__container-pin:nth-child(3) .container-pin__img {
+  width: 180px;
+  height: 180px;
+  background-image: url(../img/geo_detali.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 15px;
+}
+
+.map__container-pin:nth-child(4) .container-pin__img {
+  width: 180px;
+  height: 180px;
+  background-image: url(../img/geo_zayavka.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 15px;
+}
+
+.container-pin__text {
+  color: var(--text-black);
+  text-align: center;
+  font-family: Racama;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .container-section__three {
@@ -464,12 +534,20 @@ button {
   font-weight: 400;
   line-height: normal;
 }
+.slider {
+  width: 300px;
+  height: 257px;
+  background-image: url(../img/review_fon.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .section__six-slider {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.slider__left {
+.slider__btn--left {
   width: 60px;
   height: 60px;
   background-image: url(../img/arrows-left.svg);
@@ -479,34 +557,8 @@ button {
   border-radius: 50%;
   margin: 0 20px;
 }
-.slider__reviews1 {
-  width: 300px;
-  height: 257px;
-  background-image: url(../img/reviews1.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: 0 20px;
-}
-.slider__reviews2 {
-  width: 300px;
-  height: 257px;
-  background-image: url(../img/reviews2.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: 0 20px;
-}
-.slider__reviews3 {
-  width: 300px;
-  height: 257px;
-  background-image: url(../img/reviews3.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: 0 20px;
-}
-.slider__right {
+
+.slider__btn--right {
   width: 60px;
   height: 60px;
   background-image: url(../img/arrows-right.svg);
@@ -516,7 +568,29 @@ button {
   border-radius: 50%;
   margin: 0 20px;
 }
-
+.review__photo {
+  margin: 5px 40px;
+}
+.review__name {
+  color: var(--text-black);
+  text-align: end;
+  font-family: Racama;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 45px;
+  margin-top: 5px;
+}
+.review__text {
+  color: var(--text-black);
+  font-family: Racama;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  padding: 20px;
+}
 /*footer*/
 .fotter {
   width: 100%;
@@ -569,12 +643,28 @@ button {
   background-size: contain;
   border-radius: 50%;
 }
-.social__viber {
+.social__vk {
   width: 60px;
   height: 60px;
-  background-image: url(../img/viber.svg);
+  background-image: url(../img/vk.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 50%;
+}
+
+.social__instagram {
+  width: 60px;
+  height: 60px;
+  background-image: url(../img/instagram.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+}
+
+.dots {
+  background-color: red;
+  height: 10px;
+  width: 10px;
 }
