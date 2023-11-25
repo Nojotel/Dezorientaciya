@@ -15,6 +15,12 @@ button {
   --text-grey: #6f6f6f;
   --Light-green: #e5fb8c;
   --Green: #d4f21d;
+  --header-body-text: #f8f8f8;
+}
+.hidden {
+  opacity: 0;
+  z-index: -2;
+  transition: 0.5s ease-out;
 }
 /*Header*/
 .header {
@@ -667,8 +673,8 @@ button {
   width: 112px;
   height: 100px;
   position: fixed;
-  right: 50px;
-  bottom: 50px;
+  right: 20px;
+  bottom: 20px;
   border-radius: 0px 40px 40px 40px;
   border: 3px solid #c68dff;
   background: #fff;
@@ -678,4 +684,64 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  z-index: 5;
+}
+.bot__container {
+  width: 438px;
+  height: 750px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  border-radius: 10px 30px 10px 10px;
+  border: 1px solid rgba(143, 142, 142, 0.2);
+  background: #f9f5f5;
+  transition: 0.5s ease-out;
+}
+.bot__container--header {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px 30px 0px 0px;
+  background: #c68dff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bot--header__img {
+  width: 60px;
+  height: 54.375px;
+}
+.bot--header__text {
+  color: var(--header-body-text);
+  font-family: Racama;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  width: 70%;
+}
+.bot--header__exit {
+  background: #c68dff;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/exit_bot.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bot__container--body {
+  width: 100%;
+  height: 590px;
+}
+.bot__container--footer {
+  width: 100%;
+  height: 80px;
+  border-radius: 8px;
+  border: 1px solid rgba(143, 142, 142, 0.2);
+  background: #e2e5da;
 }
