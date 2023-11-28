@@ -17,6 +17,7 @@ button {
   --Green: #d4f21d;
   --header-body-text: #f8f8f8;
   --reply-text-placeholder: #737376;
+  --Grey: #8f8e8e;
 }
 .hidden {
   opacity: 0;
@@ -125,6 +126,7 @@ button {
   margin-bottom: 50px;
 }
 .body-container__offer-img {
+  max-height: 800px;
 }
 .offer-img__girl {
   width: 591px;
@@ -164,7 +166,50 @@ button {
   font-weight: 400;
   line-height: 95%; /* 17.1px */
 }
-.offer-img__button-bot {
+.offer-img__exp {
+  width: 108px;
+  height: 130px;
+  background-image: url(../img/exp.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  top: -750px;
+  left: 85px;
+}
+.offer-img__comment {
+  width: 180px;
+  height: 120px;
+  background-image: url(../img/reviews.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  top: -600px;
+  left: 60px;
+}
+.offer-img__container-people {
+  display: flex;
+  position: relative;
+  top: -468px;
+}
+.container-people__img:nth-of-type(1) {
+  width: 265px;
+  height: 102px;
+  background-image: url(../img/people.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.container-people__img:nth-of-type(2) {
+  width: 265px;
+  height: 102px;
+  background-image: url(../img/people1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+/*.offer-img__button-bot {
   position: relative;
   bottom: 290px;
   left: 45%;
@@ -182,14 +227,14 @@ button {
   padding: 8px 16px;
   justify-content: center;
   align-items: center;
-}
+}*/
 .offer-img__container-statistics {
   position: relative;
-  bottom: 120px;
+  bottom: 470px;
   width: 100%;
   height: 82px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 .container-statistics__text {
@@ -200,6 +245,7 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-left: -20px;
 }
 
 .section__two {
@@ -321,15 +367,16 @@ button {
   align-items: center;
 }
 
-.section__three-title {
+.section__three-title::after {
   color: var(--text-black);
   font-family: Racama;
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  content: "Запишитесь на карьерное консультирование прямо сейчас!";
 }
-.section__three-subtitle {
+.section__three-subtitle::after {
   color: var(--text-black);
   font-family: Racama;
   font-size: 18px;
@@ -337,6 +384,7 @@ button {
   font-weight: 400;
   line-height: normal;
   margin-bottom: 110px;
+  content: "Жаждете успеха? Оставьте заявку на консультацию, чтобы начать ваш путь к карьерному росту и достижению ваших целей.";
 }
 .section__three-form {
   width: 1228px;
@@ -352,7 +400,7 @@ button {
   border: 3px solid #e0e7ec;
   background: #fff;
 
-  color: var(--Grey, #8f8e8e);
+  color: var(--Grey);
   text-align: left;
   font-family: Racama;
   font-size: 18px;
@@ -387,7 +435,7 @@ button {
   align-items: center;
   height: 830px;
 }
-.section__four-title {
+.section__four-title::after {
   color: var(--text-black);
   text-align: center;
   font-family: Racama;
@@ -396,8 +444,9 @@ button {
   font-weight: 400;
   line-height: normal;
   margin-bottom: -50px;
+  content: "Давайте вместе создадим вашу успешную карьеру";
 }
-.section__four-subtitle {
+.section__four-subtitle::after {
   color: var(--text-black);
   text-align: center;
   font-family: Racama;
@@ -405,6 +454,7 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  content: "Наша команда экспертов поможет вам с выбором карьерного пути, оценкой текущих навыков и поиском вакансий";
 }
 
 .section__four-container__experts {
@@ -485,13 +535,14 @@ button {
   line-height: normal;
   margin-bottom: -50px;
 }
-.section__five-subtitle {
+.section__five-subtitle::after {
   color: var(--text-black);
   font-family: Racama;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  content: "Пообщайтесь с нашим ботом, ответьте на несколько вопросов и получите  гайд “ Как получить работу мечты” ";
 }
 .section__five-img {
   width: 750px;
@@ -523,7 +574,7 @@ button {
   justify-content: space-evenly;
   align-items: center;
 }
-.section__six-title {
+.section__six-title::after {
   color: var(--text-black);
   font-family: Racama;
   font-size: 36px;
@@ -531,6 +582,7 @@ button {
   font-weight: 400;
   line-height: normal;
   margin-bottom: -50px;
+  content: "Узнайте, как наши клиенты достигли своих карьерных целей";
 }
 .section__six-subtitle {
   color: var(--text-black);
@@ -893,7 +945,7 @@ button {
   border: 1px solid #e0e7ec;
   background: #e0c7f9;
 
-  color: var(--Grey, #8f8e8e);
+  color: var(--Grey);
   text-align: left;
   font-family: Racama;
   font-size: 16px;
@@ -910,7 +962,7 @@ button {
   border: 1px solid #e0e7ec;
   background: #e0c7f9;
 
-  color: var(--Grey, #8f8e8e);
+  color: var(--Grey);
   text-align: left;
   font-family: Racama;
   font-size: 16px;
@@ -927,7 +979,7 @@ button {
   border: 1px solid #e0e7ec;
   background: #e0c7f9;
 
-  color: var(--Grey, #8f8e8e);
+  color: var(--Grey);
   text-align: left;
   font-family: Racama;
   font-size: 16px;

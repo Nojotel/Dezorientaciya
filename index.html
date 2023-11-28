@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" media="screen and (max-width:1439px)" type="text/css" href="./css/1440.css" />
+    <link rel="stylesheet" media="screen and (max-width:999px)" type="text/css" href="./css/1000.css" />
     <title>Дезориентация</title>
   </head>
   <body class="body">
@@ -24,8 +26,13 @@
         </div>
         <div class="body-container__offer-img">
           <div class="offer-img__girl"></div>
-          <button class="offer-img__button-gift">Получить подарки</button>
-          <button class="offer-img__button-bot"></button>
+          <button class="offer-img__button-gift">Дарим подарки!</button>
+          <div class="offer-img__exp"></div>
+          <div class="offer-img__comment"></div>
+          <div class="offer-img__container-people">
+            <div class="container-people__img"></div>
+            <div class="container-people__img"></div>
+          </div>
           <div class="offer-img__container-statistics">
             <div class="container-statistics__text">30k+<br />Успешно трудоустроены</div>
             <div class="container-statistics__text">20k+<br />Получили карьерный рост</div>
@@ -46,7 +53,7 @@
           </div>
           <div class="map__container-pin">
             <div class="container-pin__img"></div>
-            <div class="container-pin__text">Встеча <br />с экспертом</div>
+            <div class="container-pin__text">Встреча <br />с экспертом</div>
           </div>
           <div class="map__container-pin">
             <div class="container-pin__text">Карьерный <br />план</div>
@@ -57,8 +64,8 @@
     </div>
     <div class="container-section__three">
       <section class="section__three">
-        <h3 class="section__three-title">Запишитесь на карьерное консультирование прямо сейчас!</h3>
-        <div class="section__three-subtitle">Жаждете успеха? Оставьте заявку на консультацию, чтобы начать ваш путь к карьерному росту и достижению ваших целей.</div>
+        <h3 class="section__three-title"></h3>
+        <div class="section__three-subtitle"></div>
         <form class="section__three-form" action="/submit" method="post">
           <input type="text" id="name" name="name" placeholder="Имя и Фамилия" required />
 
@@ -72,24 +79,26 @@
     </div>
     <div class="body-container">
       <section class="section__four">
-        <h3 class="section__four-title">Давайте вместе создадим вашу успешную карьеру</h3>
-        <div class="section__four-subtitle">Наша команда экспертов поможет вам с выбором карьерного пути, оценкой текущих навыков и поиском вакансий</div>
-        <div class="section__four-container__experts"></div>
-        <div class="section__four-container__advantages">
-          <div class="advantages__experience">
-            <div class="experience__check"></div>
-            <div class="experience__title">Образование</div>
-            <div class="experience__subtitle">У всех экспертов высшее образование, они постоянно участвуют в HR- мероприятиях и повышают квалификацию</div>
-          </div>
-          <div class="advantages__experience">
-            <div class="experience__check"></div>
-            <div class="experience__title">Опыт работы</div>
-            <div class="experience__subtitle">Имеют значительный опыт в области карьерного развития, разработают детальный план карьерного роста</div>
-          </div>
-          <div class="advantages__experience">
-            <div class="experience__check"></div>
-            <div class="experience__title">Ресурсы</div>
-            <div class="experience__subtitle">У нас есть доступ к закрытым базам вакансий, знакомы с требованиям к различным профессиям и отраслям</div>
+        <h3 class="section__four-title"></h3>
+        <div class="section__four-subtitle"></div>
+        <div class="section__four-container__mob">
+          <div class="section__four-container__experts"></div>
+          <div class="section__four-container__advantages">
+            <div class="advantages__experience">
+              <div class="experience__check"></div>
+              <div class="experience__title">Образование</div>
+              <div class="experience__subtitle">У всех экспертов высшее образование, они постоянно участвуют в HR- мероприятиях и повышают квалификацию</div>
+            </div>
+            <div class="advantages__experience">
+              <div class="experience__check"></div>
+              <div class="experience__title">Опыт работы</div>
+              <div class="experience__subtitle">Имеют значительный опыт в области карьерного развития, разработают детальный план карьерного роста</div>
+            </div>
+            <div class="advantages__experience">
+              <div class="experience__check"></div>
+              <div class="experience__title">Ресурсы</div>
+              <div class="experience__subtitle">У нас есть доступ к закрытым базам вакансий, знакомы с требованиям к различным профессиям и отраслям</div>
+            </div>
           </div>
         </div>
         <button class="offer-button">Заявка на карьерную консультацию</button>
@@ -98,14 +107,14 @@
     <div class="container-section__five">
       <section class="section__five">
         <h3 class="section__five-title">Получите подарки от наших экспертов</h3>
-        <div class="section__five-subtitle">Пообщайтесь с нашим ботом, ответьте на несколько вопросов и получите гайд “Как получить работу мечты”</div>
+        <div class="section__five-subtitle"></div>
         <div class="section__five-img"></div>
         <button class="section__five-button">Получить подарок</button>
       </section>
     </div>
     <div class="body-container">
       <section class="section__six">
-        <h3 class="section__six-title">Узнайте, как наши клиенты достигли своих карьерных целей</h3>
+        <h3 class="section__six-title"></h3>
         <div class="section__six-subtitle">Заслуженные слова наших клиентов о том, как карьерное консультирование привело их к успеху.</div>
         <div class="section__six-slider">
           <button class="slider__btn--left"></button>

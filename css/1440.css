@@ -1,0 +1,297 @@
+.header {
+  height: 100px;
+}
+.nav-container {
+  width: 960px;
+}
+.nav-container__logo {
+  width: 274.618px;
+  height: 40px;
+}
+.body-container {
+  width: 960px;
+}
+.container-section__three {
+  width: 960px;
+  height: 420px;
+}
+.container-section__five {
+  width: 100%;
+  height: 690px;
+}
+.section__one {
+  height: 730px;
+  width: 960px;
+}
+.section__two {
+  width: 960px;
+  height: 550px;
+}
+.container-section__three {
+  width: 100%;
+}
+.section__three {
+  width: 960px;
+}
+.section__four {
+  width: 960px;
+  height: 660px;
+}
+.section__six {
+  height: 500px;
+  width: 960px;
+}
+.section__five {
+  width: 960px;
+}
+.offer-title {
+  font-size: 40px;
+  line-height: 44px;
+}
+.offer-subtitle {
+  font-size: 25px;
+  line-height: 32px;
+  min-width: 540px;
+}
+.offer-button {
+  font-size: 20px;
+  width: 429px;
+  height: 72px;
+}
+.offer-partner__text {
+  top: 25px;
+  font-size: 36px;
+}
+.offer-partner__img {
+  width: 540px;
+  height: 80px;
+}
+.body-container__offer {
+  max-height: 690px;
+}
+
+.body-container__offer-img {
+  max-height: 535px;
+}
+.offer-img__girl {
+  width: 370px;
+  height: 520px;
+}
+.offer-img__button-gift {
+  width: 89px;
+  height: 89px;
+  font-size: 12px;
+  line-height: 80%;
+  padding: 0;
+  padding-right: 5px;
+  bottom: 380px;
+  left: 60%;
+}
+.offer-img__exp {
+  width: 79px;
+  height: 88px;
+  top: -500px;
+  left: 40px;
+}
+.offer-img__comment {
+  width: 156px;
+  height: 84px;
+  top: -465px;
+  left: 30px;
+}
+.offer-img__container-people {
+  top: -330px;
+}
+.container-people__img:nth-of-type(1) {
+  width: 206px;
+  height: 80px;
+}
+.container-people__img:nth-of-type(2) {
+  width: 206px;
+  height: 80px;
+}
+.offer-img__container-statistics {
+  top: -350px;
+}
+.container-statistics__text {
+  font-size: 14px;
+  margin-left: 0;
+}
+.section__two-title {
+  font-size: 36px;
+  margin-bottom: -35px;
+}
+.section__two-subtitle {
+  font-size: 18px;
+}
+.section__two-map {
+  width: 960px;
+  height: 300px;
+}
+.map__container-pin {
+}
+.container-pin__img {
+  width: 133.885px;
+  height: 178.423px;
+}
+.map__container-pin:nth-child(1) {
+  margin: 40px 20px;
+}
+.map__container-pin:nth-child(2) {
+  margin: 40px 0px;
+}
+.map__container-pin:nth-child(3) {
+  margin: 40px 23px;
+}
+.map__container-pin:nth-child(4) {
+  margin: 40px 0px;
+}
+.container-pin__text {
+  font-size: 24px;
+}
+
+.section__three-title::after {
+  font-size: 36px;
+  content: "Запишитесь на карьерное консультирование!";
+}
+.section__three-subtitle::after {
+  font-size: 18px;
+  content: "Жаждете успеха? Оставьте заявку на консультацию, чтобы начать ваш путь к карьерному росту.";
+}
+.section__three-form {
+  width: 960px;
+  margin-top: 50px;
+}
+.section__three-form > input {
+  width: 202px;
+  height: 70px;
+  margin: 16px;
+  font-size: 18px;
+  padding-left: 10px;
+}
+.section__three-form :nth-child(3) {
+  width: 225px;
+}
+.section__three-button {
+  width: 225px;
+  height: 72px;
+  font-size: 20px;
+}
+.section__four-title {
+  font-size: 32px;
+  margin-bottom: -25px;
+}
+.section__four-subtitle::after {
+  font-size: 18px;
+  content: "Наши эксперты помогут с выбором карьерного пути, оценкой текущих навыков и поиском вакансий";
+}
+.section__four-container__experts {
+  width: 960px;
+}
+.expert-container__img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 5px solid #e0c7f9;
+}
+.section__four-container__advantages {
+}
+.advantages__experience {
+}
+.experience__check {
+}
+.experience__title {
+  font-size: 20px;
+}
+.experience__subtitle {
+  font-size: 16px;
+  height: 90px;
+}
+.offer-button {
+  width: 429px;
+  height: 72px;
+  font-size: 20px;
+}
+.section__five-title {
+  font-size: 32px;
+}
+.section__five-subtitle::after {
+  font-size: 18px;
+  content: "Ответьте на несколько вопросов нашему боту и получите  гайд “Как получить работу мечты” ";
+}
+.section__five-img {
+  width: 750px;
+  height: 250px;
+}
+.section__five-button {
+  width: 355px;
+  height: 72px;
+  font-size: 20px;
+  padding: 0;
+}
+.section__six {
+}
+.section__six-title {
+  margin-bottom: -20px;
+}
+.section__six-title::after {
+  font-size: 32px;
+  content: "Узнайте, как наши клиенты достигли карьерного роста";
+}
+.section__six-subtitle {
+  font-size: 18px;
+}
+.section__six-slider {
+  width: 100%;
+}
+.slider__btn--left {
+  width: 37px;
+  height: 37px;
+}
+.slider {
+}
+.slider__review {
+}
+.review__photo {
+  width: 70px;
+  height: 70px;
+  margin: 16px 36px;
+}
+.review__name {
+  font-size: 18px;
+  margin-top: 0px;
+}
+.review__text {
+  padding-top: 5px;
+  font-size: 13px;
+}
+.slider__btn--right {
+  width: 37px;
+  height: 37px;
+}
+.fotter {
+  height: 180px;
+}
+.fotter-container {
+  width: 960px;
+}
+.fotter-container__contact {
+  font-size: 32px;
+}
+.fotter-container__mail {
+  font-size: 18px;
+}
+.fotter-container__social {
+}
+.social__telegramm {
+}
+.social__watsapp {
+}
+.social__vk {
+}
+.social__instagram {
+}
+.bot__start {
+  width: 80px;
+  height: 70px;
+}

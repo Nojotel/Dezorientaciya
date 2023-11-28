@@ -72,7 +72,7 @@ function createForm() {
 
   const inputs = [
     { type: "text", id: "namebot", name: "name", placeholder: "Имя и Фамилия", required: true },
-    { type: "tel", id: "phonebot", name: "phone", placeholder: "Телефон", required: true },
+    { type: "tel", id: "phonebot", name: "phone", placeholder: "Телефон" },
     { type: "email", id: "emailbot", name: "email", placeholder: "Электронная почта" },
   ];
 
@@ -88,34 +88,44 @@ function createForm() {
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const formData = {
-      name: form.querySelector("#namebot").value,
-      phone: form.querySelector("#phonebot").value,
-      email: form.querySelector("#emailbot").value,
-    };
+    const nameValue = form.querySelector("#namebot").value;
+    const phoneValue = form.querySelector("#phonebot").value;
+    const emailValue = form.querySelector("#emailbot").value;
 
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    // Check if name is provided and either phone or email is provided
+    if (nameValue && nameValue.trim() !== "" && (phoneValue || emailValue)) {
+      const formData = {
+        name: nameValue,
+        phone: phoneValue,
+        email: emailValue,
+      };
 
-      const responseText = await response.text();
-      console.log("Response content:", responseText);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
 
-      form.querySelector("#namebot").value = "";
-      form.querySelector("#phonebot").value = "";
-      form.querySelector("#emailbot").value = "";
+        const responseText = await response.text();
+        console.log("Response content:", responseText);
 
-      userAnswerContainer.innerHTML = "";
+        form.querySelector("#namebot").value = "";
+        form.querySelector("#phonebot").value = "";
+        form.querySelector("#emailbot").value = "";
 
-      const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Ваша заявка получена! Спасибо за доверие!<br><br>В ближайшее время наши эксперты вам позвонят!");
-      userAnswerContainer.appendChild(successMessage);
-    } catch (error) {
-      console.error("Error submitting form:", error);
+        userAnswerContainer.innerHTML = "";
+
+        const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Ваша заявка получена! Спасибо за доверие!<br><br>В ближайшее время наши эксперты вам позвонят!");
+        userAnswerContainer.appendChild(successMessage);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
+    } else {
+      // Provide user feedback if name and at least one of phone or email is required
+      alert("Введите имя и хотя бы телефон или электронную почту.");
     }
   });
 
