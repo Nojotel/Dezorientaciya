@@ -77,6 +77,7 @@
   width: 291px;
   margin-left: 85px;
   height: 47px;
+  margin-bottom: 50px;
 }
 
 .body-container__offer {
@@ -93,7 +94,7 @@
 }
 
 .offer-img__girl {
-  width: 300px;
+  width: 360px;
   height: 421px;
 }
 .offer-img__button-gift {
@@ -104,19 +105,19 @@
   padding: 0;
   padding-right: 5px;
   bottom: 300px;
-  left: 60%;
+  left: 70%;
 }
 .offer-img__exp {
   width: 79px;
   height: 88px;
   top: -450px;
-  left: 20px;
+  left: 50px;
 }
 .offer-img__comment {
   width: 156px;
   height: 84px;
   top: -410px;
-  left: 0px;
+  left: 30px;
 }
 .offer-img__container-people {
   top: -330px;
@@ -307,6 +308,7 @@
 .experience__subtitle {
   font-size: 13px;
   height: 90px;
+  margin-bottom: -10px;
 }
 .experience__check {
   display: none;
