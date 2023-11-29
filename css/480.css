@@ -343,7 +343,7 @@
   justify-content: space-between;
 }
 .section__six-title {
-  margin-bottom: -20px;
+  margin-bottom: 0px;
 }
 .section__six-title::after {
   font-size: 32px;
