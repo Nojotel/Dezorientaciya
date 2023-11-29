@@ -288,8 +288,8 @@
 }
 .section__four-container__experts,
 .section__four-container__advantages {
-  width: 170px;
-  height: 430px;
+  width: 155px;
+  height: 410px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
