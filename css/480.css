@@ -371,15 +371,23 @@
 .review__photo {
   width: 50px;
   height: 50px;
-  margin: 44px 30px;
+  margin: 0;
+  position: relative;
+  top: 43px;
+  left: 30px;
 }
 .review__name {
   font-size: 17px;
   margin-top: -35px;
+  position: relative;
+  top: 83px;
+  right: -26px;
 }
 .review__text {
+  position: relative;
   padding-top: 5px;
   font-size: 10px;
+  top: 80px;
 }
 .slider__btn--right {
   width: 37px;
