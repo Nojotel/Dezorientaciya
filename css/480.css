@@ -350,7 +350,7 @@
   content: "Узнайте, как наши клиенты достигли карьерного роста";
   display: block;
   text-align: center;
-  margin-bottom: -10px;
+  margin-bottom: 25px;
 }
 .section__six-subtitle {
   text-align: center;
@@ -358,6 +358,7 @@
 }
 .section__six-slider {
   width: 100%;
+  height: 100%;
 }
 .slider__btn--left {
   width: 37px;
@@ -373,8 +374,8 @@
   margin: 44px 30px;
 }
 .review__name {
-  font-size: 18px;
-  margin-top: -30px;
+  font-size: 17px;
+  margin-top: -35px;
 }
 .review__text {
   padding-top: 5px;
