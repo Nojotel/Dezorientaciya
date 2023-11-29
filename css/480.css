@@ -371,10 +371,11 @@
 .review__photo {
   width: 50px;
   height: 50px;
-  margin: 0;
+
+  margin: 5px;
   position: relative;
-  top: 43px;
-  left: 30px;
+  top: 39px;
+  left: 25px;
 }
 .review__name {
   font-size: 17px;
