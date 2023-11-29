@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const SLIDES_TO_SHOW_DEFAULT = 3;
-  const SLIDES_TO_SHOW_MOBILE = 2; // Количество слайдов для мобильных устройств
+  const SLIDES_TO_SHOW_MOBILE = 2;
   const slider = document.querySelector(".section__six-slider");
   const slides = Array.from(slider.querySelectorAll(".slider"));
   const totalSlides = slides.length;
@@ -39,8 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const getSlidesToShow = () => {
-    // Проверка ширины экрана для решения, сколько слайдов отображать
-    return window.innerWidth < 1000 ? SLIDES_TO_SHOW_MOBILE : SLIDES_TO_SHOW_DEFAULT;
+    if (window.innerWidth < 768) {
+      return 1;
+    } else if (window.innerWidth < 1000) {
+      return SLIDES_TO_SHOW_MOBILE;
+    } else {
+      return SLIDES_TO_SHOW_DEFAULT;
+    }
   };
 
   leftButton.addEventListener("click", prevSlide);
@@ -48,6 +53,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   showSlides();
 
-  // Пересчитывать слайды при изменении размера окна
   window.addEventListener("resize", showSlides);
 });

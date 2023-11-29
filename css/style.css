@@ -94,9 +94,9 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding: 24px 28px;
 
   display: flex;
-  padding: 24px 28px;
   justify-content: center;
   align-items: center;
   gap: 80px;
@@ -104,6 +104,10 @@ button {
   background: var(--Light-green);
   box-shadow: 3px 3px 1px 0px rgba(0, 0, 0, 0.8);
 }
+.offer-button::after {
+  content: "Заявка на карьерную консультацию";
+}
+
 .offer-partner__text {
   color: var(--text-black);
   text-align: center;
@@ -164,7 +168,7 @@ button {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 95%; /* 17.1px */
+  line-height: 95%;
 }
 .offer-img__exp {
   width: 108px;
@@ -247,7 +251,6 @@ button {
   line-height: normal;
   margin-left: -20px;
 }
-
 .section__two {
   width: 1280px;
   height: 700px;

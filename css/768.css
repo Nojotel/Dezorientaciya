@@ -1,87 +1,96 @@
 .header {
-  height: 80px;
+  height: 70px;
 }
 .nav-container {
-  width: 720px;
-  height: 80px;
+  width: 460px;
+  height: 70px;
 }
 .nav-container__logo {
-  width: 274.618px;
-  height: 40px;
+  width: 192px;
+  height: 28px;
 }
 .body-container {
-  width: 720px;
+  width: 460px;
 }
 .container-section__three {
-  width: 720px;
-  height: 420px;
+  width: 100%;
+  height: 100%;
 }
 .container-section__five {
   width: 100%;
   height: 550px;
 }
 .section__one {
-  height: 540px;
-  width: 720px;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 1015px;
+  width: 460px;
 }
 .section__two {
-  width: 720px;
-  height: 450px;
-}
-.container-section__three {
-  width: 100%;
+  width: 460px;
+  height: 900px;
+  margin-top: -170px;
 }
 .section__three {
-  width: 720px;
+  width: 460px;
+  padding: 20px 0;
 }
 .section__four {
-  width: 720px;
-  height: 850px;
+  width: 460px;
+  height: 1000px;
 }
 .section__six {
   height: 500px;
-  width: 720px;
+  width: 460px;
 }
 .section__five {
-  width: 720px;
+  width: 460px;
 }
 .offer-title {
-  font-size: 30px;
+  font-size: 28px;
   line-height: normal;
+  min-width: 340px;
 }
 .offer-subtitle {
-  font-size: 19px;
+  font-size: 17px;
   line-height: normal;
-  min-width: 540px;
+  min-width: 365px;
 }
 .offer-button {
+  font-size: 14px;
   margin-top: -70px;
-  width: 317px;
-  height: 64px;
+  width: 428px;
+  height: 72px;
 }
 .offer-button::after {
-  font-size: 14px;
+  content: "Заявка на консультацию";
 }
 .offer-partner__text {
   top: 25px;
   font-size: 28px;
+  font-size: 32px;
 }
 .offer-partner__img {
   width: 420px;
   height: 63px;
 }
+
 .body-container__offer {
+  align-items: center;
+  order: 2;
   max-height: 690px;
+  height: 600px;
 }
 
 .body-container__offer-img {
-  max-height: 615px;
-  margin-top: -30px;
+  order: 1;
+  max-height: 490px;
+  margin-top: 0px;
 }
 
 .offer-img__girl {
-  width: 370px;
-  height: 520px;
+  width: 300px;
+  height: 421px;
 }
 .offer-img__button-gift {
   width: 89px;
@@ -90,20 +99,20 @@
   line-height: 80%;
   padding: 0;
   padding-right: 5px;
-  bottom: 380px;
-  left: 70%;
+  bottom: 300px;
+  left: 60%;
 }
 .offer-img__exp {
   width: 79px;
   height: 88px;
-  top: -500px;
-  left: 50px;
+  top: -450px;
+  left: 20px;
 }
 .offer-img__comment {
   width: 156px;
   height: 84px;
-  top: -465px;
-  left: 30px;
+  top: -410px;
+  left: 0px;
 }
 .offer-img__container-people {
   top: -330px;
@@ -124,42 +133,90 @@
   margin-left: 0;
 }
 .section__two-title {
+  text-align: center;
   font-size: 32px;
   margin-bottom: -10px;
 }
 .section__two-subtitle {
-  font-size: 18px;
+  font-size: 17px;
   text-align: center;
+  margin-top: -65px;
 }
 .section__two-map {
-  width: 720px;
-  height: 250px;
+  background-image: url(../img/road_map1.png);
+  flex-direction: column;
+  width: 170px;
+  height: 500px;
+  margin-top: -75px;
 }
 .map__container-pin {
+  flex-direction: row-reverse;
 }
 .container-pin__img {
-  width: 88.373px;
-  height: 117.771px;
+  width: 66px;
+  height: 190px;
 }
 .map__container-pin:nth-child(1) {
-  margin: 40px -13px;
+  width: 170px;
+  height: 190px;
+  margin: 20px -42px;
 }
 .map__container-pin:nth-child(2) {
-  margin: 40px -25px;
+  width: 170px;
+  height: 190px;
+  margin: 20px 49px;
 }
 .map__container-pin:nth-child(3) {
-  margin: 40px -7px;
+  width: 170px;
+  height: 190px;
+  margin: 20px -48px;
 }
 .map__container-pin:nth-child(4) {
-  margin: 40px -31px;
+  width: 170px;
+  height: 190px;
+  margin: 15px 47px;
 }
-.container-pin__text {
-  font-size: 14px;
+.map__container-pin:nth-child(1) .container-pin__img {
+  width: 170px;
+  height: 88px;
+  margin: 0px;
 }
 
+.map__container-pin:nth-child(2) .container-pin__img {
+  width: 66px;
+  height: 88px;
+
+  margin: 0px;
+}
+
+.map__container-pin:nth-child(3) .container-pin__img {
+  width: 66px;
+  height: 88px;
+
+  margin: 0px;
+}
+
+.map__container-pin:nth-child(4) .container-pin__img {
+  width: 66px;
+  height: 88px;
+
+  margin: 0px;
+}
+.container-pin__text {
+  text-align: center;
+  font-size: 14px;
+  width: 95px;
+}
+.section__three-title {
+  text-align: center;
+}
 .section__three-title::after {
   font-size: 32px;
   content: "Запись на карьерное консультирование!";
+  text-align: center;
+}
+.section__three-subtitle {
+  text-align: center;
 }
 .section__three-subtitle::after {
   font-size: 17px;
@@ -167,7 +224,7 @@
   text-align: center;
 }
 .section__three-form {
-  width: 720px;
+  width: 95%;
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -182,7 +239,7 @@
 }
 
 .section__three-form > input {
-  width: 202px;
+  width: 95%;
   height: 70px;
   margin: 16px;
   font-size: 18px;
@@ -190,20 +247,25 @@
 }
 
 .section__three-button {
-  width: 225px;
+  width: 50%;
   height: 72px;
   font-size: 20px;
   order: 2;
   margin-top: 16px;
 }
 .section__three-form :nth-child(3) {
-  width: 202px;
+  width: 95%;
 }
-
+.section__four-title {
+  text-align: center;
+}
 .section__four-title::after {
   font-size: 32px;
   margin-bottom: -25px;
   content: "Вместе создадим вашу успешную карьеру";
+}
+.section__four-subtitle {
+  text-align: center;
 }
 .section__four-subtitle::after {
   font-size: 18px;
@@ -212,20 +274,20 @@
   align-items: center;
 }
 .section__four-container__experts {
-  width: 720px;
+  width: 460px;
 }
 .expert-container__img {
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 5px solid #e0c7f9;
 }
 .section__four-container__experts,
 .section__four-container__advantages {
-  width: 330px;
-  height: 600px;
+  width: 240px;
+  height: 620px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
 }
@@ -235,14 +297,23 @@
 }
 
 .experience__title {
-  font-size: 20px;
+  font-size: 18px;
 }
 .experience__subtitle {
-  font-size: 16px;
+  font-size: 14px;
   height: 90px;
 }
+.experience__check {
+}
+
 .section__five-title {
+  text-align: center;
   font-size: 32px;
+  margin-top: -20px;
+}
+
+.section__five-subtitle {
+  text-align: center;
 }
 .section__five-subtitle::after {
   font-size: 18px;
@@ -251,8 +322,8 @@
   text-align: center;
 }
 .section__five-img {
-  width: 500px;
-  height: 166px;
+  width: 345px;
+  height: 115px;
 }
 .section__five-button {
   width: 355px;
@@ -261,6 +332,7 @@
   padding: 0;
 }
 .section__six {
+  justify-content: space-between;
 }
 .section__six-title {
   margin-bottom: -20px;
@@ -290,7 +362,7 @@
 .review__photo {
   width: 70px;
   height: 70px;
-  margin: 13px 39px;
+  margin: 11px 44px;
 }
 .review__name {
   font-size: 18px;
@@ -305,10 +377,11 @@
   height: 37px;
 }
 .fotter {
-  height: 180px;
+  height: 250px;
 }
 .fotter-container {
-  width: 720px;
+  flex-direction: column;
+  width: 460px;
 }
 .fotter-container__contact {
   font-size: 32px;
@@ -325,4 +398,8 @@
 .social__vk {
 }
 .social__instagram {
+}
+.bot__start {
+  width: 50px;
+  height: 40px;
 }

@@ -53,10 +53,8 @@
   line-height: 32px;
   min-width: 540px;
 }
-.offer-button {
+.offer-button::after {
   font-size: 20px;
-  width: 429px;
-  height: 72px;
 }
 .offer-partner__text {
   top: 25px;
