@@ -367,15 +367,18 @@
 .slider {
 }
 .slider__review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
 }
 .review__photo {
-  width: 50px;
-  height: 50px;
-
+  width: 45px;
+  height: 45px;
   margin: 5px;
   position: relative;
-  top: 39px;
-  left: 25px;
+  top: 42px;
+  left: 28px;
 }
 .review__name {
   font-size: 17px;

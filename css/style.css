@@ -924,7 +924,18 @@ button {
   border-radius: 15px;
   margin-top: 20px;
 }
-
+.ansercontainer--user__2--form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 250px;
+  height: 165px;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
 .ansercontainer--user__1--form__button {
   color: var(--text-black);
   text-align: center;
@@ -934,7 +945,22 @@ button {
   font-weight: 400;
   line-height: normal;
   width: 202px;
-  height: 170px;
+  height: 135px;
+  border-radius: 40px;
+  border: 3px solid #cff000;
+  background: #fff;
+  margin-top: 8px;
+}
+.ansercontainer--user__2--form__button {
+  color: var(--text-black);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 200px;
+  height: 50px;
   border-radius: 40px;
   border: 3px solid #cff000;
   background: #fff;
@@ -990,6 +1016,38 @@ button {
   font-weight: 400;
   line-height: normal;
   padding-left: 20px;
+}
+#botProfession {
+  width: 230px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+.bot--back {
+  color: var(--text-black);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 200px;
+  height: 50px;
+  border-radius: 40px;
+  border: 3px solid #cff000;
+  background: #fff;
+  margin-top: 8px;
 }
 .none {
   display: none;

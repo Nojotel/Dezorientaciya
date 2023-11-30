@@ -2,9 +2,10 @@ const startBot = document.querySelector(".bot__start");
 const containerBot = document.querySelector(".bot__container");
 const exitBot = document.querySelector(".bot--header__exit");
 const userAnswerContainer = document.querySelector(".bot--body__ansercontainer--user");
-
+let backButton = null;
 let userAnswerDiv = null;
 let formAdded = false;
+let careerSupportClicked = false;
 
 function openBot() {
   startBot.classList.add("hidden");
@@ -34,21 +35,48 @@ exitBot.addEventListener("click", closeBot);
 
 function toggleButtons(clickedButton) {
   const userContainer = document.querySelector(".bot__container--user");
+  const buttons = document.querySelectorAll(".bot--body__button");
 
-  if (clickedButton.classList.contains("bot--body__button") && (clickedButton.textContent.trim() === "Меня интересует профориентация 🤔" || clickedButton.textContent.trim() === "Заявка на консультацию ✍️")) {
-    if (!elementExists(userAnswerDiv)) {
-      userAnswerDiv = createElementWithClassAndText("div", "ansercontainer--user__text", "Укажите как к вам обращаться, электронную почту или телефон");
-      userAnswerContainer.appendChild(userAnswerDiv);
-      userAnswerContainer.classList.remove("none");
-    }
+  if (clickedButton.classList.contains("gift-support")) {
+    userAnswerContainer.innerHTML = "Отлично! 👍 Я тоже люблю подарки 😍<br><br>Но у меня есть всего 5 вопросов, ответив на которые Вы получите замечательный подарок!";
 
-    if (!formAdded) {
-      const form = createForm();
-      userAnswerContainer.appendChild(form);
-      formAdded = true;
-    }
+    const button1 = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "Я люблю подарки, задавай вопросы!");
+    const button2 = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "🔙  Вернуться назад");
 
-    const buttons = document.querySelectorAll(".bot--body__button");
+    userAnswerContainer.appendChild(button1);
+    userAnswerContainer.appendChild(button2);
+
+    button1.addEventListener("click", function () {
+      userAnswerContainer.innerHTML = "";
+
+      const careerSupportBtn = document.getElementById("careerSupportBtn");
+      toggleButtons(careerSupportBtn);
+    });
+
+    button2.addEventListener("click", function () {
+      backButton.click();
+    });
+
+    userAnswerContainer.classList.remove("none");
+    userContainer.classList.remove("none");
+
+    buttons.forEach((button) => {
+      if (button === clickedButton) {
+        button.style.backgroundColor = "#E2E5DA";
+      } else {
+        button.style.display = "none";
+      }
+    });
+  } else if (clickedButton.id === "careerSupportBtn" && !careerSupportClicked) {
+    careerSupportClicked = true;
+
+    const userAnswerDiv = createElementWithClassAndText("div", "ansercontainer--user__text", "Напишите, пожалуйста, вашу профессию?👇");
+    userAnswerContainer.appendChild(userAnswerDiv);
+
+    const form = createProfessionForm();
+    userAnswerContainer.appendChild(form);
+
+    userAnswerContainer.classList.remove("none");
 
     buttons.forEach((button) => {
       button.style.display = button !== clickedButton ? "none" : "";
@@ -56,14 +84,88 @@ function toggleButtons(clickedButton) {
     });
 
     userContainer.classList.remove("none");
+  } else {
+    if (clickedButton.classList.contains("bot--body__button") && (clickedButton.textContent.trim() === "Меня интересует профориентация 🤔" || clickedButton.textContent.trim() === "Заявка на консультацию ✍️")) {
+      if (!elementExists(userAnswerDiv)) {
+        userAnswerDiv = createElementWithClassAndText("div", "ansercontainer--user__text", "Укажите как к вам обращаться, электронную почту или телефон");
+        userAnswerContainer.appendChild(userAnswerDiv);
+        userAnswerContainer.classList.remove("none");
+      }
+
+      if (!formAdded) {
+        const form = createForm();
+        userAnswerContainer.appendChild(form);
+        formAdded = true;
+      }
+
+      buttons.forEach((button) => {
+        button.style.display = button !== clickedButton ? "none" : "";
+        button.style.backgroundColor = button === clickedButton ? "#E2E5DA" : "";
+      });
+
+      userContainer.classList.remove("none");
+    }
   }
 }
+
+function createProfessionForm() {
+  const form = document.createElement("form");
+  form.classList.add("ansercontainer--user__2--form");
+  form.id = "professionForm";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.id = "botProfession";
+  input.placeholder = "Название профессии";
+  form.appendChild(input);
+
+  const submitButton = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "Отправить");
+  form.appendChild(submitButton);
+
+  backButton = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "🔙  Вернуться назад");
+  form.appendChild(backButton);
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const professionValue = form.querySelector("#botProfession").value;
+
+    form.reset();
+  });
+
+  backButton.addEventListener("click", function () {
+    userAnswerContainer.innerHTML = "";
+
+    careerSupportClicked = false;
+    formAdded = false;
+
+    userAnswerContainer.classList.add("none");
+
+    const userContainer = document.querySelector(".bot__container--user");
+    userContainer.classList.add("none");
+
+    const userContainerImg = document.querySelector(".bot__container--user .bot--header__img");
+    if (userContainerImg) {
+      userContainerImg.style.display = "block";
+    }
+
+    const buttons = document.querySelectorAll(".bot--body__button");
+    buttons.forEach((button) => {
+      button.style.display = "";
+      button.style.backgroundColor = "";
+    });
+  });
+
+  return form;
+}
+
 function createElementWithClassAndHTML(elementType, className, html) {
   const element = document.createElement(elementType);
   element.classList.add(className);
   element.innerHTML = html;
   return element;
 }
+
 function createForm() {
   const form = document.createElement("form");
   form.classList.add("ansercontainer--user__1--form");
@@ -92,7 +194,6 @@ function createForm() {
     const phoneValue = form.querySelector("#phonebot").value;
     const emailValue = form.querySelector("#emailbot").value;
 
-    // Check if name is provided and either phone or email is provided
     if (nameValue && nameValue.trim() !== "" && (phoneValue || emailValue)) {
       const formData = {
         name: nameValue,
@@ -124,8 +225,15 @@ function createForm() {
         console.error("Error submitting form:", error);
       }
     } else {
-      // Provide user feedback if name and at least one of phone or email is required
-      alert("Введите имя и хотя бы телефон или электронную почту.");
+      if (!nameValue || nameValue.trim() === "") {
+        setPlaceholderError(form.querySelector("#namebot"));
+      }
+      if (!phoneValue) {
+        setPlaceholderError(form.querySelector("#phonebot"));
+      }
+      if (!emailValue) {
+        setPlaceholderError(form.querySelector("#emailbot"));
+      }
     }
   });
 
