@@ -128,27 +128,20 @@ function createProfessionForm() {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const professionValue = form.querySelector("#botProfession").value;
-
-    form.reset();
+    submitProfessionForm();
   });
 
   backButton.addEventListener("click", function () {
     userAnswerContainer.innerHTML = "";
-
     careerSupportClicked = false;
     formAdded = false;
-
     userAnswerContainer.classList.add("none");
-
     const userContainer = document.querySelector(".bot__container--user");
     userContainer.classList.add("none");
-
     const userContainerImg = document.querySelector(".bot__container--user .bot--header__img");
     if (userContainerImg) {
       userContainerImg.style.display = "block";
     }
-
     const buttons = document.querySelectorAll(".bot--body__button");
     buttons.forEach((button) => {
       button.style.display = "";
@@ -157,6 +150,66 @@ function createProfessionForm() {
   });
 
   return form;
+}
+
+let receivedId = null;
+
+async function submitProfessionForm() {
+  const professionValue = document.getElementById("botProfession").value;
+
+  console.log("Profession submitted:", professionValue);
+
+  try {
+    const getResponse = await fetch(`http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/?profession=${professionValue}`, {
+      method: "GET",
+    });
+
+    const getData = await getResponse.json();
+    console.log("GET Response data:", getData);
+
+    receivedId = getData;
+    console.log("Received id:", receivedId);
+
+    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        profession: professionValue,
+        id: receivedId,
+      }),
+    });
+
+    const postData = await postResponse.json();
+    console.log("POST Response data:", postData);
+
+    if (postData.error) {
+      handleError();
+    } else {
+      handleSuccess();
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    handleError();
+  } finally {
+    document.getElementById("botProfession").value = "";
+  }
+}
+
+function handleError() {
+  const errorText = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Сервер не отвечает. Пожалуйста, попробуйте повторить позже");
+  userAnswerContainer.innerHTML = "";
+  userAnswerContainer.appendChild(errorText);
+
+  const formContainer = document.querySelector(".ansercontainer--user__2");
+  if (formContainer) {
+    formContainer.classList.add("none");
+  }
+}
+
+function handleSuccess() {
+  console.log("Form submitted successfully!");
 }
 
 function createElementWithClassAndHTML(elementType, className, html) {

@@ -73,7 +73,7 @@ buttonSendForm.addEventListener("click", async function (e) {
   }
 
   const formData = {
-    name: formName.value,
+    full_name: formName.value,
     phone: formTel.value,
     email: formMail.value,
   };
