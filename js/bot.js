@@ -352,7 +352,7 @@ async function submitSalaryForm() {
     console.log("POST Response data:", postData);
 
     if (postData) {
-      handleSalarySuccess();
+      handleSalarySuccess(); // Call the correct function here
     } else {
       handleSalaryError();
     }
@@ -383,10 +383,13 @@ function handleSalarySuccess() {
   userAnswerContainer.appendChild(input);
 
   const submitButton = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "Отправить");
-  submitButton.addEventListener("click", submitHoursForm);
+  submitButton.addEventListener("click", function () {
+    submitHoursForm(input.value);
+  });
   userAnswerContainer.appendChild(submitButton);
 }
-async function submitHoursForm() {
+
+/*async function submitHoursForm() {
   const hoursValue = document.getElementById("hours").value;
 
   console.log("Hours submitted:", hoursValue);
@@ -422,6 +425,8 @@ async function submitHoursForm() {
       ageInput.type = "number";
       ageInput.id = "age";
       ageInput.placeholder = "Введите цифрами";
+      ageInput.min = "0";
+      ageInput.step = "1";
       userAnswerContainer.appendChild(ageInput);
 
       const submitButton = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "Отправить");
@@ -433,11 +438,9 @@ async function submitHoursForm() {
   } catch (error) {
     console.error("Error:", error);
   }
-}
-async function submitAgeForm() {
-  const ageValue = document.getElementById("age").value;
-
-  console.log("Age submitted:", ageValue);
+}*/
+async function submitHoursForm(hoursValue) {
+  console.log("Hours submitted:", hoursValue);
 
   try {
     const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
@@ -447,7 +450,7 @@ async function submitAgeForm() {
       },
       body: JSON.stringify({
         id: receivedId,
-        age: ageValue,
+        hours: hoursValue,
       }),
     });
 
@@ -455,19 +458,18 @@ async function submitAgeForm() {
     console.log("POST Response data:", postData);
 
     if (postData) {
-      console.log("Age form submitted successfully!");
+      console.log("Hours form submitted successfully!");
 
-      const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Круто! Вы успешно ответили на все мои вопросы.💪<br><br>Карьерное развитие можно начать в любом возрасте😀<br><br>Я готов отдать Вам подарок!");
+      //const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", `Отлично! 🙏<br><br>Мы посчитали стоимость часа Вашей работы: ${earnings} руб/час.<br>Мне было приятно с вами общаться!<br><br>Ваш подарок уже на почте!<br><br>Наши карьерные консультанты всегда рады вам помочь <a href='mailto:support@dezorientaciya.ru'>support@dezorientaciya.ru</a><br><br>До скорых встреч!`);
+      const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", `Чтобы получить подарки 🎁 укажите ваше ФИО и контактные данные, а мы отправим их  на эл. почту👇`);
       userAnswerContainer.innerHTML = "";
       userAnswerContainer.appendChild(successMessage);
 
-      const giftButton1 = createElementWithClassAndText("button", "bot__giftButton", "Гайд “Как получить работу своей мечты”");
-      const giftButton2 = createElementWithClassAndText("button", "bot__giftButton", "Гайд “Как составить эффектное резюме”");
-
-      userAnswerContainer.appendChild(giftButton1);
-      userAnswerContainer.appendChild(giftButton2);
+      // Display the form with name, phone, and email
+      const form = createGiftForm();
+      userAnswerContainer.appendChild(form);
     } else {
-      console.error("Error submitting age form");
+      console.error("Error submitting hours form");
     }
   } catch (error) {
     console.error("Error:", error);
