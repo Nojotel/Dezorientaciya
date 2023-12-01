@@ -11,7 +11,19 @@ const buttonGift = document.querySelector(".offer-img__button-gift");
 const toGift = document.querySelector(".section__five");
 const buttonCom = document.querySelector(".offer-img__comment");
 const toCom = document.querySelector(".section__six");
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    document.querySelector(".offer-img__button-gift").classList.remove("hidden");
+  }, 1000);
 
+  setTimeout(function () {
+    document.querySelector(".offer-img__exp").classList.remove("hidden");
+  }, 2000);
+
+  setTimeout(function () {
+    document.querySelector(".offer-img__comment").classList.remove("hidden");
+  }, 3000);
+});
 let experts = [
   {
     url: "./img/Experts1.png",

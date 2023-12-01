@@ -195,8 +195,17 @@ button {
 .offer-img__container-people {
   display: flex;
   position: relative;
-  top: -468px;
+  top: -476px;
 }
+.offer-img__star {
+  width: 2vw;
+  height: 2vw;
+  background-image: url(../img/star.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 .container-people__img:nth-of-type(1) {
   width: 265px;
   height: 102px;
