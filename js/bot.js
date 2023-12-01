@@ -55,11 +55,7 @@ function toggleButtons(clickedButton) {
     });
 
     button2.addEventListener("click", function () {
-      if (backButton) {
-        backButton.click();
-      } else {
-        console.error("backButton is not initialized");
-      }
+      backButton.click();
     });
 
     userAnswerContainer.classList.remove("none");
@@ -159,8 +155,12 @@ function createProfessionForm() {
 
 let receivedId = null;
 
-function updateAnswerContainerText(text) {
-  userAnswerContainer.innerHTML = text;
+function updateAnswerContainerText() {
+  const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", "У вас хорошая профессия. Каждая существующая профессия очень важна, потому что решает чью-то проблему и делает жизнь лучше.<br><br>Напишите, пожалуйста, какой у вас общий стаж работы?👇");
+  const experienceForm = createExperienceForm();
+  userAnswerContainer.innerHTML = "";
+  userAnswerContainer.appendChild(successMessage);
+  userAnswerContainer.appendChild(experienceForm);
 }
 
 async function submitProfessionForm() {
@@ -169,7 +169,7 @@ async function submitProfessionForm() {
   console.log("Profession submitted:", professionValue);
 
   try {
-    const getResponse = await fetch(`http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/?profession=${professionValue}`, {
+    const getResponse = await fetch(`http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/`, {
       method: "GET",
     });
 
@@ -193,17 +193,355 @@ async function submitProfessionForm() {
     const postData = await postResponse.json();
     console.log("POST Response data:", postData);
 
-    if (postData && postData.message) {
-      updateAnswerContainerText(postData.message);
+    if (postData) {
+      updateAnswerContainerText();
+      handleSuccess();
     } else {
       handleError();
     }
   } catch (error) {
     console.error("Error:", error);
     handleError();
-  } finally {
-    document.getElementById("botProfession").value = "";
   }
+}
+
+function createExperienceForm() {
+  const form = document.createElement("form");
+  form.classList.add("ansercontainer--user__2--form");
+  form.id = "experienceForm";
+
+  const input = document.createElement("input");
+  input.type = "number";
+  input.id = "experience";
+  input.placeholder = "Стаж работы(лет)";
+  form.appendChild(input);
+  input.min = "0";
+
+  const submitButton = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "Отправить");
+  form.appendChild(submitButton);
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    submitExperienceForm();
+  });
+
+  return form;
+}
+
+async function submitExperienceForm() {
+  const experienceValue = document.getElementById("experience").value;
+
+  console.log("Experience submitted:", experienceValue);
+
+  try {
+    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: receivedId,
+        int: experienceValue,
+      }),
+    });
+
+    const postData = await postResponse.json();
+    console.log("POST Response data:", postData);
+
+    if (postData) {
+      handleExperienceSuccess();
+    } else {
+      handleExperienceError();
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    handleExperienceError();
+  }
+}
+
+function handleExperienceSuccess() {
+  console.log("Experience form submitted successfully!");
+
+  const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Спасибо за ответ 👍<br><br>Напишите, пожалуйста, ваш доход в месяц");
+  userAnswerContainer.innerHTML = "";
+  userAnswerContainer.appendChild(successMessage);
+
+  const salaryForm = createSalaryForm();
+  userAnswerContainer.appendChild(salaryForm);
+}
+
+function createSalaryForm() {
+  const form = document.createElement("form");
+  form.classList.add("ansercontainer--user__2--form");
+  form.id = "salaryForm";
+
+  const input = document.createElement("input");
+  input.type = "number";
+  input.id = "salary";
+  input.placeholder = "Введите цифрами";
+  input.min = "0";
+  input.step = "1000";
+  form.appendChild(input);
+
+  const submitButton = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "Отправить");
+  form.appendChild(submitButton);
+
+  const additionalButton = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "Я пока не зарабатываю");
+  additionalButton.id = "salary__butt";
+  form.appendChild(additionalButton);
+
+  let salaryButtonClicked = false;
+
+  additionalButton.addEventListener("click", function () {
+    userAnswerContainer.innerHTML = "Это не повод грустить, вы можете получить нашу карьерную поддержку и в скором времени вы обязательно начнете получать доход! Но раз я обещал подарки, то для вас у меня целых два подарка!<br> Выбрать подарок";
+
+    const form = document.getElementById("salaryForm");
+    if (form) {
+      form.remove();
+    }
+
+    const giftButton1 = createElementWithClassAndText("button", "bot__giftButton", "Скидка на 1 консультацию 1000 руб.");
+    const giftButton2 = createElementWithClassAndText("button", "bot__giftButton", "Гайд “Как получить работу своей мечты”");
+
+    userAnswerContainer.appendChild(giftButton1);
+    userAnswerContainer.appendChild(giftButton2);
+
+    giftButton1.addEventListener("click", function () {
+      userAnswerContainer.innerHTML = "Чтобы получить подарки укажите ваше ФИО, электронную почту, телефон и подарки придут к вам на email.";
+
+      const form = createGiftForm();
+      userAnswerContainer.appendChild(form);
+    });
+
+    giftButton2.addEventListener("click", function () {
+      userAnswerContainer.innerHTML = "Чтобы получить подарки укажите ваше ФИО, электронную почту, телефон и подарки придут к вам на email.";
+
+      const form = createGiftForm();
+      userAnswerContainer.appendChild(form);
+    });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    submitSalaryForm();
+  });
+
+  return form;
+}
+
+async function submitSalaryForm() {
+  const salaryValue = document.getElementById("salary").value;
+
+  console.log("Salary submitted:", salaryValue);
+
+  try {
+    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: receivedId,
+        salary: salaryValue,
+      }),
+    });
+
+    const postData = await postResponse.json();
+    console.log("POST Response data:", postData);
+
+    if (postData) {
+      handleSalarySuccess();
+    } else {
+      handleSalaryError();
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    handleSalaryError();
+  }
+}
+
+function handleSalarySuccess() {
+  console.log("Salary form submitted successfully!");
+
+  const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Благодарю! Сколько часов в неделю Вы работаете?");
+  userAnswerContainer.innerHTML = "";
+  userAnswerContainer.appendChild(successMessage);
+
+  const form = document.getElementById("salaryForm");
+  if (form) {
+    form.reset();
+  }
+
+  const input = document.createElement("input");
+  input.type = "number";
+  input.id = "hours";
+  input.placeholder = "Введите цифрами";
+  input.min = "0";
+  input.step = "1";
+  userAnswerContainer.appendChild(input);
+
+  const submitButton = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "Отправить");
+  submitButton.addEventListener("click", submitHoursForm);
+  userAnswerContainer.appendChild(submitButton);
+}
+async function submitHoursForm() {
+  const hoursValue = document.getElementById("hours").value;
+
+  console.log("Hours submitted:", hoursValue);
+
+  try {
+    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: receivedId,
+        hours: hoursValue,
+      }),
+    });
+
+    const postData = await postResponse.json();
+    console.log("POST Response data:", postData);
+
+    if (postData) {
+      console.log("Hours form submitted successfully!");
+
+      const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Вот мы и на финишной прямой. Напишите, пожалуйста, ваш возраст.");
+      userAnswerContainer.innerHTML = "";
+      userAnswerContainer.appendChild(successMessage);
+
+      const oldInput = document.getElementById("hours");
+      if (oldInput) {
+        oldInput.remove();
+      }
+
+      const ageInput = document.createElement("input");
+      ageInput.type = "number";
+      ageInput.id = "age";
+      ageInput.placeholder = "Введите цифрами";
+      userAnswerContainer.appendChild(ageInput);
+
+      const submitButton = createElementWithClassAndText("button", "ansercontainer--user__2--form__button", "Отправить");
+      submitButton.addEventListener("click", submitAgeForm);
+      userAnswerContainer.appendChild(submitButton);
+    } else {
+      console.error("Error submitting hours form");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+async function submitAgeForm() {
+  const ageValue = document.getElementById("age").value;
+
+  console.log("Age submitted:", ageValue);
+
+  try {
+    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: receivedId,
+        age: ageValue,
+      }),
+    });
+
+    const postData = await postResponse.json();
+    console.log("POST Response data:", postData);
+
+    if (postData) {
+      console.log("Age form submitted successfully!");
+
+      const successMessage = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Круто! Вы успешно ответили на все мои вопросы.💪<br><br>Карьерное развитие можно начать в любом возрасте😀<br><br>Я готов отдать Вам подарок!");
+      userAnswerContainer.innerHTML = "";
+      userAnswerContainer.appendChild(successMessage);
+
+      const giftButton1 = createElementWithClassAndText("button", "bot__giftButton", "Гайд “Как получить работу своей мечты”");
+      const giftButton2 = createElementWithClassAndText("button", "bot__giftButton", "Гайд “Как составить эффектное резюме”");
+
+      userAnswerContainer.appendChild(giftButton1);
+      userAnswerContainer.appendChild(giftButton2);
+    } else {
+      console.error("Error submitting age form");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+function handleSalaryError() {
+  console.error("Error submitting salary form");
+}
+
+function createGiftForm() {
+  const form = document.createElement("form");
+  form.classList.add("gift__form");
+
+  const nameInput = document.createElement("input");
+  nameInput.type = "text";
+  nameInput.placeholder = "ФИО";
+  nameInput.classList.add("name__bot");
+
+  const telInput = document.createElement("input");
+  telInput.type = "tel";
+  telInput.placeholder = "Телефон";
+  telInput.classList.add("tel__bot");
+
+  const emailInput = document.createElement("input");
+  emailInput.type = "email";
+  emailInput.placeholder = "Электронная почта";
+  emailInput.classList.add("email__bot");
+
+  const submitButton = createElementWithClassAndText("button", "gift__form__button", "Отправить");
+  form.appendChild(nameInput);
+  form.appendChild(telInput);
+  form.appendChild(emailInput);
+  form.appendChild(submitButton);
+
+  submitButton.addEventListener("click", async function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: nameInput.value,
+      tel: telInput.value,
+      email: emailInput.value,
+    };
+
+    try {
+      const response = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        userAnswerContainer.innerHTML = "Мне было приятно с вами общаться!<br><br>Ваш подарок уже на почте!<br><br>Наши карьерные консультанты всегда рады вам помочь <a href='mailto:support@dezorientaciya.ru'>support@dezorientaciya.ru</a><br><br>До скорых встреч!";
+
+        form.style.display = "none";
+      } else {
+        console.error("Form submission failed:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  });
+
+  return form;
+}
+
+function handleExperienceError() {
+  console.error("Error submitting experience form");
+}
+
+function handleSuccess() {
+  console.log("Form submitted successfully!");
 }
 
 function handleError() {
@@ -301,3 +639,5 @@ function createForm() {
 
   return form;
 }
+const giftButton = document.querySelector(".section__five-button");
+giftButton.addEventListener("click", openBot);

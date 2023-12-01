@@ -160,7 +160,7 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: 15%;
-  background-size: initial;
+  background-size: 70%;
   transform: rotate(18deg);
   color: var(--text-black);
   text-align: center;
@@ -1053,6 +1053,153 @@ button {
   font-weight: 400;
   line-height: normal;
   padding-left: 20px;
+}
+#salary {
+  width: 230px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+#hours {
+  width: 230px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+#age {
+  width: 230px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+#salary__butt {
+  color: var(--text-black);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 200px;
+  height: 50px;
+  border-radius: 40px;
+  border: 3px solid #cff000;
+  background: #fff;
+  margin-top: 8px;
+}
+.bot__giftButton {
+  color: var(--text-black);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 200px;
+  height: 50px;
+  border-radius: 40px;
+  border: 3px solid #cff000;
+  background: #7fffe8;
+  margin-top: 8px;
+}
+.name__bot {
+  width: 230px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+.tel__bot {
+  width: 230px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+.email__bot {
+  width: 230px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+.gift__form__button {
+  color: var(--text-black);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 200px;
+  height: 50px;
+  border-radius: 40px;
+  border: 3px solid #cff000;
+  background: #fff;
+  margin-top: 8px;
 }
 .bot--back {
   color: var(--text-black);

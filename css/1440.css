@@ -78,7 +78,7 @@
 .offer-img__button-gift {
   width: 89px;
   height: 89px;
-  font-size: 12px;
+  font-size: 12px !important;
   line-height: 80%;
   padding: 0;
   padding-right: 5px;
@@ -309,4 +309,8 @@ button {
 }
 .offer-button::after {
   font-size: 20px !important;
+}
+
+.bot__container button {
+  font-size: 16px !important;
 }
