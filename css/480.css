@@ -34,6 +34,7 @@
 .section__three {
   width: 350px;
   padding: 20px 0;
+  background: #ead4ff;
 }
 .section__four {
   width: 350px;
@@ -45,6 +46,7 @@
 }
 .section__five {
   width: 350px;
+  background: #ead4ff;
 }
 .offer-title {
   font-size: 28px;
