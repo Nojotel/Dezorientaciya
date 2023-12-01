@@ -542,10 +542,6 @@ function handleExperienceError() {
   console.error("Error submitting experience form");
 }
 
-function handleSuccess() {
-  console.log("Form submitted successfully!");
-}
-
 function handleError() {
   const errorText = createElementWithClassAndHTML("div", "ansercontainer--user__text", "Сервер не отвечает. Пожалуйста, попробуйте повторить позже");
   userAnswerContainer.innerHTML = "";
