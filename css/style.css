@@ -743,8 +743,8 @@ button {
   z-index: 5;
 }
 .bot__container {
-  width: 23%;
-  height: 80%;
+  width: 30vw;
+  height: 80vh;
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -798,10 +798,12 @@ button {
   display: flex;
   flex-direction: column;
   padding: 0px 20px;
+  overflow: hidden;
 }
+
 .bot__container--footer {
   width: 100%;
-  height: 80px;
+  height: 12%;
   border-radius: 8px;
   border: 1px solid rgba(143, 142, 142, 0.2);
   background: #e2e5da;
@@ -871,7 +873,7 @@ button {
   background: rgba(212, 242, 29, 0.7);
   margin: 5px;
   text-align: center;
-  height: 50px;
+  min-height: 50px;
   padding: 0 20px;
   transition: background 0.3s ease;
   font-family: Arial, Helvetica, sans-serif;
@@ -896,8 +898,10 @@ button {
   margin-left: -85px;
 }
 .bot__container--user {
+  width: 100%;
   display: flex;
   align-items: end;
+  justify-content: flex-start;
   margin-bottom: 10px;
 }
 .bot--body__ansercontainer--user {

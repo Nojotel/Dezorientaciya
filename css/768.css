@@ -403,3 +403,15 @@
   width: 50px;
   height: 40px;
 }
+.bot__container {
+  width: 92vw;
+}
+.bot--header__img {
+  display: none !important;
+}
+button {
+  font-size: 20px !important;
+}
+.offer-button::after {
+  font-size: 20px !important;
+}
