@@ -5,6 +5,12 @@ const formName = document.querySelector("#name");
 const formTel = document.querySelector("#phone");
 const formMail = document.querySelector("#email");
 const containeExperts = document.querySelector(".section__four-container__experts");
+const buttonExp = document.querySelector(".offer-img__exp");
+const toExp = document.querySelector(".section__four");
+const buttonGift = document.querySelector(".offer-img__button-gift");
+const toGift = document.querySelector(".section__five");
+const buttonCom = document.querySelector(".offer-img__comment");
+const toCom = document.querySelector(".section__six");
 
 let experts = [
   {
@@ -51,6 +57,16 @@ buttonКequestСonsultation.forEach((button) => {
   button.addEventListener("click", function () {
     containerКequestСonsultation.scrollIntoView({ behavior: "smooth" });
   });
+});
+
+buttonExp.addEventListener("click", function () {
+  toExp.scrollIntoView({ behavior: "smooth" });
+});
+buttonGift.addEventListener("click", function () {
+  toGift.scrollIntoView({ behavior: "smooth" });
+});
+buttonCom.addEventListener("click", function () {
+  toCom.scrollIntoView({ behavior: "smooth" });
 });
 
 buttonSendForm.addEventListener("click", async function (e) {

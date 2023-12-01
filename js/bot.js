@@ -2,7 +2,6 @@ const startBot = document.querySelector(".bot__start");
 const containerBot = document.querySelector(".bot__container");
 const exitBot = document.querySelector(".bot--header__exit");
 const userAnswerContainer = document.querySelector(".bot--body__ansercontainer--user");
-let backButton = null;
 let userAnswerDiv = null;
 let formAdded = false;
 let careerSupportClicked = false;
@@ -33,6 +32,8 @@ function elementExists(element) {
 startBot.addEventListener("click", openBot);
 exitBot.addEventListener("click", closeBot);
 
+let backButton = null;
+
 function toggleButtons(clickedButton) {
   const userContainer = document.querySelector(".bot__container--user");
   const buttons = document.querySelectorAll(".bot--body__button");
@@ -54,7 +55,11 @@ function toggleButtons(clickedButton) {
     });
 
     button2.addEventListener("click", function () {
-      backButton.click();
+      if (backButton) {
+        backButton.click();
+      } else {
+        console.error("backButton is not initialized");
+      }
     });
 
     userAnswerContainer.classList.remove("none");
@@ -154,6 +159,10 @@ function createProfessionForm() {
 
 let receivedId = null;
 
+function updateAnswerContainerText(text) {
+  userAnswerContainer.innerHTML = text;
+}
+
 async function submitProfessionForm() {
   const professionValue = document.getElementById("botProfession").value;
 
@@ -184,10 +193,10 @@ async function submitProfessionForm() {
     const postData = await postResponse.json();
     console.log("POST Response data:", postData);
 
-    if (postData.error) {
-      handleError();
+    if (postData && postData.message) {
+      updateAnswerContainerText(postData.message);
     } else {
-      handleSuccess();
+      handleError();
     }
   } catch (error) {
     console.error("Error:", error);

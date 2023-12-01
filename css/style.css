@@ -743,8 +743,8 @@ button {
   z-index: 5;
 }
 .bot__container {
-  width: 438px;
-  height: 750px;
+  width: 23%;
+  height: 80%;
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -752,11 +752,10 @@ button {
   border-radius: 10px 30px 10px 10px;
   border: 1px solid rgba(143, 142, 142, 0.2);
   background: #f9f5f5;
-  transition: 0.5s ease-out;
 }
 .bot__container--header {
   width: 100%;
-  height: 80px;
+  height: 12%;
   border-radius: 10px 30px 0px 0px;
   background: #c68dff;
   display: flex;
@@ -795,7 +794,7 @@ button {
   justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
-  height: 590px;
+  height: 79%;
   display: flex;
   flex-direction: column;
   padding: 0px 20px;
@@ -1018,6 +1017,23 @@ button {
   padding-left: 20px;
 }
 #botProfession {
+  width: 230px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ec;
+  background: #e0c7f9;
+
+  color: var(--Grey);
+  text-align: left;
+  font-family: Racama;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 20px;
+}
+#experience {
   width: 230px;
   height: 40px;
   margin: 5px;
