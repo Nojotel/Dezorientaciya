@@ -512,9 +512,10 @@ function createGiftForm() {
     e.preventDefault();
 
     const formData = {
-      name: nameInput.value,
-      tel: telInput.value,
+      full_name: nameInput.value,
+      phone: telInput.value,
       email: emailInput.value,
+      id: receivedId,
     };
 
     try {
@@ -525,7 +526,7 @@ function createGiftForm() {
         },
         body: JSON.stringify(formData),
       });
-
+      console.log(receivedId);
       if (response.ok) {
         userAnswerContainer.innerHTML = "Мне было приятно с вами общаться!<br><br>Ваш подарок уже на почте!<br><br>Наши карьерные консультанты всегда рады вам помочь <a href='mailto:support@dezorientaciya.ru'>support@dezorientaciya.ru</a><br><br>До скорых встреч!";
 
@@ -574,7 +575,7 @@ function createForm() {
   form.method = "POST";
 
   const inputs = [
-    { type: "text", id: "namebot", name: "name", placeholder: "Имя и Фамилия", required: true },
+    { type: "text", id: "namebot", name: "full_name", placeholder: "Имя и Фамилия", required: true },
     { type: "tel", id: "phonebot", name: "phone", placeholder: "Телефон" },
     { type: "email", id: "emailbot", name: "email", placeholder: "Электронная почта" },
   ];
@@ -597,7 +598,7 @@ function createForm() {
 
     if (nameValue && nameValue.trim() !== "" && (phoneValue || emailValue)) {
       const formData = {
-        name: nameValue,
+        full_name: nameValue,
         phone: phoneValue,
         email: emailValue,
       };
