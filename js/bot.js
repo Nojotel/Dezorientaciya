@@ -169,7 +169,7 @@ async function submitProfessionForm() {
   console.log("Profession submitted:", professionValue);
 
   try {
-    const getResponse = await fetch(`http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/`, {
+    const getResponse = await fetch(`http://hackatoncom6.ddns.net:7777/chat_bot_rest/chat_bot/`, {
       method: "GET",
     });
 
@@ -179,14 +179,15 @@ async function submitProfessionForm() {
     receivedId = getData;
     console.log("Received id:", receivedId);
 
-    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/chat_bot/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        profession: professionValue,
+        current_profession: professionValue,
         id: receivedId,
+        status: "process",
       }),
     });
 
@@ -235,14 +236,15 @@ async function submitExperienceForm() {
   console.log("Experience submitted:", experienceValue);
 
   try {
-    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/chat_bot/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         id: receivedId,
-        int: experienceValue,
+        work_experience: experienceValue,
+        status: "process",
       }),
     });
 
@@ -337,7 +339,7 @@ async function submitSalaryForm() {
   console.log("Salary submitted:", salaryValue);
 
   try {
-    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/chat_bot/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -345,6 +347,7 @@ async function submitSalaryForm() {
       body: JSON.stringify({
         id: receivedId,
         salary: salaryValue,
+        status: "process",
       }),
     });
 
@@ -352,7 +355,7 @@ async function submitSalaryForm() {
     console.log("POST Response data:", postData);
 
     if (postData) {
-      handleSalarySuccess(); // Call the correct function here
+      handleSalarySuccess();
     } else {
       handleSalaryError();
     }
@@ -443,7 +446,7 @@ async function submitHoursForm(hoursValue) {
   console.log("Hours submitted:", hoursValue);
 
   try {
-    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+    const postResponse = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/chat_bot/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -451,6 +454,7 @@ async function submitHoursForm(hoursValue) {
       body: JSON.stringify({
         id: receivedId,
         hours: hoursValue,
+        status: "end",
       }),
     });
 
@@ -465,7 +469,6 @@ async function submitHoursForm(hoursValue) {
       userAnswerContainer.innerHTML = "";
       userAnswerContainer.appendChild(successMessage);
 
-      // Display the form with name, phone, and email
       const form = createGiftForm();
       userAnswerContainer.appendChild(form);
     } else {
