@@ -454,7 +454,7 @@ async function submitHoursForm(hoursValue) {
       body: JSON.stringify({
         id: receivedId,
         hours: hoursValue,
-        status: "end",
+        status: "process",
       }),
     });
 
@@ -516,10 +516,11 @@ function createGiftForm() {
       phone: telInput.value,
       email: emailInput.value,
       id: receivedId,
+      status: "end",
     };
 
     try {
-      const response = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/client/", {
+      const response = await fetch("http://hackatoncom6.ddns.net:7777/chat_bot_rest/chat_bot/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
