@@ -1,5 +1,7 @@
 # Dezorientaciya
 
+![Cертификат](https://github.com/Nojotel/Dezorientaciya/blob/main/img/Александр%20Фёдоров%20мега-1.png)
+
 О ПАРТНЕРЕ:
 
 Заказчик: Дезориентация
